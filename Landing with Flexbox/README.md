@@ -1,4 +1,4 @@
-# Calendar-React-Redux
-React +Redux + babel + eslint + webpack
+# Landing with Flexbox
+HTML + CSS
 
-Link to view: http://security-guard-distortion-61642.bitballoon.com/
+Link to view: http://naturalist-arrests-36637.bitballoon.com/
