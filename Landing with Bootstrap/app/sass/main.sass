@@ -1,0 +1,483 @@
+@import "bourbon"
+@import "vars"
+@import "libs"
+body
+  margin-top: 111px
+.navbar, .navbar-default
+  max-height: 111px
+  background-color: #ffffff
+  margin-bottom: 0
+  border: none
+  box-shadow: none
+  .btn
+    margin-top: 34px
+  .navbar-nav
+    li
+      a
+        display: inline-block
+        font-size: 15px
+        font-family: SourceSansPro-Bold
+        line-height: 111px
+        padding: 0 21px
+        color: $HeadingColor
+        &:hover
+          color: $acentColor
+          transition: all 0.3s
+  .navbar-brand
+    margin-right: 66px
+    height: 100px
+    line-height: 100px
+    img
+      display: inline-block
+      margin-top: 8px
+  .btn
+    background-color: transparent
+    float: right
+    .fa-search
+      color: $HeadingColor
+      line-height: 30px
+      &:hover
+        color: $acentColor
+        transition: all 0.3s
+.carousel-indicators
+  margin: 0
+  background-color: #ffffff
+  width: 145px
+  height: 45px
+  color: $HeadingColor
+  border-radius: 3px
+  bottom: -20px
+  left: 45%
+  li
+    height: 15px
+    width: 15px
+    border-radius: 50%
+    border: none
+    background-color: $HeadingColor
+    position: relative
+    top: 15px
+  .active
+    background-color: $acentColor
+    height: 15px
+    width: 15px
+.carousel-inner
+  height: 100%
+  //.item
+  //  img
+      //height: 100%
+.carousel-caption
+  top: 240px
+  padding-top: 0
+  left: 19.5%
+  right: 19.5%
+  h2
+    font-size: 78px
+    font-family: Lato-Black
+    color: rgb(255, 255, 255)
+    line-height: 1.128
+    letter-spacing: 4.7px
+  p
+    font-size: 24px
+    font-family: $ContentFont
+    color: #a3b1bf
+    line-height: 33px
+    box-shadow: none
+    width: 89%
+    letter-spacing: 0.5px
+  button
+    border-radius: 3px
+    background-color: $acentColor
+    box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.15)
+    width: 295px
+    height: 65px
+    font-size: 18px
+    font-family: SourceSansPro-Bold
+    letter-spacing: 0.5px
+    vertical-align: middle
+    &:hover, &:focus, &:active
+      color: white
+      background-color: #17a78b
+      transition: all 0.3s
+
+.Designers
+  h2
+    margin: 46px 0 13px 6px
+  p
+    margin: 0 0 61px 63px
+.beautiful-design
+  h2
+    margin-top: 3px
+    width: 80%
+    float: right
+    text-align: right
+  p
+    color: white
+    float: right
+    text-align: right
+    margin: 6px 0 60px 0
+    width: 82%
+  button
+    float: right
+.Clean-code
+  h2
+    float: left
+    text-align: left
+    display: inline
+    width: 70%
+    margin: -38px 0 27px 0
+    span
+      background-color: $HeadingColor
+      font-size: 73px
+      font-family: Lato-Black
+      color: rgb(255, 255, 255)
+      line-height: 128px
+      letter-spacing: 4.7px
+      padding: 10px
+  p
+    float: left
+    text-align: left
+    color: $HeadingColor
+    width: 65%
+  button
+    float: left
+    margin: 52px 125px 0 0
+.creativity
+  h2
+    float: right
+    text-align: right
+    display: inline
+    width: 70%
+    margin: -157px 0 27px 0
+    span
+      background-color: $HeadingColor
+      font-size: 73px
+      font-family: Lato-Black
+      color: rgb(255, 255, 255)
+      line-height: 128px
+      letter-spacing: 4.7px
+      padding: 10px
+  p
+    float: right
+    text-align: right
+    color: white
+    width: 65%
+  button
+    float: right
+    margin: 52px 0 0 125px
+.content
+  h2
+    width: 60%
+    margin: -159px auto 15px auto
+  p
+    width: 60%
+    margin: 0 auto 59px auto
+.right
+  right: 30px
+.left
+  left: 30px
+.carousel-control
+  background-image: none!important
+  width: 60px
+  height: 60px
+  border-radius: 3px
+  line-height: 34px
+  font-size: 26px
+  top: 46.5%
+  background-color: lighten($HeadingColor, 10%)
+  .fa-chevron-right, .fa-chevron-left
+    top: 25%
+    position: relative
+  &:hover
+    transition: all 0.3s
+    background-color: $HeadingColor
+    .fa
+      color: $acentColor
+.who-we-are
+  .center
+    padding: 0
+    p
+      letter-spacing: 0.1px
+.USP
+  margin-top: 59px
+  .fa-4x
+    font-size: 4.5em
+  .col-md-3
+    &:nth-child(2)
+      padding: 0 0 0 4px
+    &:nth-child(4)
+      padding-right: 0
+    &:last-child
+      padding: 0 0 0 23px
+  .col-md-1
+    &:first-child
+      .fa
+        margin-right: 15px
+  h4
+    font-family: $HeadingFont
+    color: $HeadingColor
+    line-height: 34px
+    font-size: 26px
+    margin-top: -1px
+  p
+    font-family: $ContentFont
+    color: $ContentColor
+    line-height: 25px
+    font-size: 16px
+    margin: 20px 0 101px 0
+  .fa
+    float: right
+    color: $acentColor
+.latest-works
+  background: #f2f5f7
+  .col-md-6
+    &:first-child
+      padding-left: 0
+    &:last-child
+      padding-right: 0
+  figure
+    margin: 64px 0 83px 0
+  figcaption
+    padding-top: 29px
+    border-radius: 3px
+    background-color: rgb(255, 255, 255)
+    box-shadow: inset 0px -1px 0px 1px rgba(230, 233, 237, 0.004)
+    width: 570px
+    text-align: center
+    height: 110px
+    p
+      font-size: 20px
+      font-family: $HeadingFont
+      color: $HeadingColor
+      line-height: 1.3
+      margin-bottom: 6px
+      letter-spacing: 0.5px
+  .carousel-indicators
+    margin: 0
+    background-color: transparent
+    color: $HeadingColor
+    border-radius: 3px
+    bottom: -73px
+    left: 44%
+    li
+      height: 15px
+      width: 15px
+      border-radius: 50%
+      border: none
+      background-color: $HeadingColor
+      position: relative
+      margin-right: 6px
+    .active
+      background-color: $acentColor
+      height: 15px
+      width: 15px
+  .carousel-control
+    border-radius: 3px
+    background-color: #c9d2da
+    width: 30px
+    height: 30px
+    top: 119%
+    &:hover
+      transition: all 0.3s
+      background-color: rgb(80, 106, 133)
+      .fa
+        color: $acentColor
+
+    .fa-chevron-right, .fa-chevron-left
+      top: -10%
+      position: relative
+      color: white
+      font-size: 18px
+      &:hover
+        transition: all 0.3s
+        background-color: $HeadingColor
+        .fa
+          color: $acentColor
+  .left
+    left: 480px
+  .right
+    right: 480px
+  .carousel-inner
+    margin-bottom: 197px
+    .col-md-3
+      text-align: center
+      &:first-child
+        padding-left: 0
+        padding-right: 22px
+      &:nth-child(2)
+        padding-left: 7px
+      &:nth-child(3)
+        padding-right: 7px
+      &:last-child
+        padding-left: 23px
+        padding-right: 0
+.get-in-touch
+  background-color: #ffffff
+  button
+    width: 150px
+    height: 50px
+    background-color: $acentColor
+    font-size: 15px
+    font-family: SourceSansPro-Bold
+    color: rgb(255, 255, 255)
+    line-height: 1.2
+    text-align: center
+    border-radius: 3px
+    box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.15)
+    margin: 27px 0 130px 0
+    letter-spacing: 0.5px
+    &:hover, &:focus, &:active
+      color: white
+      transition: all 0.3s
+      background-color: #17a78b
+.info
+  background-color: #2f4052
+  .overlay-content
+    width: 98%
+    height: 95%
+    .fa
+      top: 32%
+      left: 40%
+  .col-md-3
+    &:first-child
+      padding: 0
+      p
+        margin-top: 14px
+        width: 90%
+    &:nth-child(2)
+      padding-left: 7px
+    &:last-child
+      padding-left: 23px
+  h4
+    margin: 69px 0 22px 0
+    font-size: 16px
+    font-family: $HeadingFont
+    color: rgb(255, 255, 255)
+    line-height: 1.375
+    letter-spacing: 1.4px
+  img
+    margin: 0 3px 5px 0
+  a, address
+    margin-top: 30px
+    color: rgb(163,177,191)
+    font-family: SourceSansPro-Bold
+    &:hover
+      text-decoration: none
+      color: $acentColor
+      cursor: pointer
+      transition: all 0.3s
+      i
+        color: $acentColor
+        transition: all 0.3s
+
+  li
+    &:hover
+      color: $acentColor
+      transition: all 0.3s
+  p
+    color: rgb(163,177,191)
+    margin: -6px 0 15px 0
+    letter-spacing: 0.13px
+  address
+    margin: 0
+    color: rgb(163,177,191)
+    letter-spacing: 0.3px
+    &:before
+      content: '\f041'
+      font-family: FontAwesome
+      margin-right: 10px
+  .tel
+    letter-spacing: 0.3px
+    &:before
+      content: '\f10b'
+      font-family: FontAwesome
+      font-size: 24px
+      margin-right: 10px
+  .e-mail
+    letter-spacing: 0.3px
+    margin-bottom: 105px
+    &:before
+      content: '\f003'
+      font-family: FontAwesome
+      margin-right: 6px
+  button
+    font-family: SourceSansPro-Bold
+    font-size: 13px
+    position: absolute
+    border-radius: 3px
+    background-color: rgb(0, 188, 156)
+    box-shadow: inset 0px -2px 0px 0px rgba(0, 0, 0, 0.15)
+    width: 88px
+    height: 30px
+    top: 10%
+    right: 5px
+    color: white
+    cursor: pointer
+    z-index: 10
+    &:hover, &:focus, &:active
+      color: white
+      background-color: #17a78b
+      transition: all 0.3s
+  .form-control
+    border-radius: 3px
+    background-color: #4e5c6c
+    width: 270px
+    color: #828e99
+    height: 40px
+    opacity: 1
+    border: none
+    &::placeholder
+      font-size: 14px
+      font-family: $ContentFont
+      color: #828e99
+      line-height: 1.571
+      text-align: left
+    &:focus
+      background-color: #596675
+      color: white
+      opacity: 1
+      transition: all 0.3s
+footer
+  height: 83px
+  background-color: #283645
+  p
+    float: left
+    line-height: 83px
+    margin: 0
+  .footer-nav
+    float: right
+    margin-top: 31px
+    li
+      display: inline-block
+      &:not(:first-child):before
+        content: '.'
+        position: relative
+        top: -3px
+        right: -7px
+    a
+      color: $ContentColor
+      font-family: $ContentFont
+      margin-left: 18px
+      &:hover
+        text-decoration: none
+        color: $acentColor
+  .anchor
+    border-radius: 3px
+    background-color: #c9d2da
+    width: 30px
+    height: 30px
+    float: right
+    text-align: center
+    position: fixed
+    right: 30px
+    bottom: 30px
+    opacity: 0.4
+    .fa-chevron-up
+      color: white
+      margin-top: 8px
+    &:hover
+      transition: all 0.3s
+      background-color: rgb(80, 106, 133)
+      opacity: 1
+      .fa
+        color: $acentColor
+

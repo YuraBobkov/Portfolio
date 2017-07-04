@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Hind-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Hind/Hind-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Hind/Hind-Bold.woff") format("woff"), url("../fonts/Hind/Hind-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Hind-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Hind/Hind-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Hind/Hind-Light.woff") format("woff"), url("../fonts/Hind/Hind-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Hind-Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Hind/Hind-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Hind/Hind-Medium.woff") format("woff"), url("../fonts/Hind/Hind-Medium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Hind-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Hind/Hind-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Hind/Hind-Regular.woff") format("woff"), url("../fonts/Hind/Hind-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Hind-SemiBold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Hind/Hind-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Hind/Hind-SemiBold.woff") format("woff"), url("../fonts/Hind/Hind-SemiBold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "MrsSaintDelafield";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/MrsSaintDelafield/MrsSaintDelafield-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/MrsSaintDelafield/MrsSaintDelafield-Regular.woff") format("woff"), url("../fonts/MrsSaintDelafield/MrsSaintDelafield-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Montserrat/Montserrat-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat/Montserrat-Bold.woff") format("woff"), url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype"); }

@@ -1,0 +1,11 @@
+#modules
+
+node_modules
+
+.npm
+
+.idea
+
+.log
+
+server/static

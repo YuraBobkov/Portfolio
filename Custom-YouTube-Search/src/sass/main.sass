@@ -1,0 +1,152 @@
+*
+  margin: 0
+  padding: 0
+
+body
+  background-color: darkslategrey
+
+.clearfix:after
+  content: ''
+  display: block
+  clear: both
+
+.search
+  width: 700px
+  border-radius: 10px
+  height: 30px
+  margin: 10px auto
+  background: #fff
+  font-size: 0
+  padding: 10px
+  position: relative
+  label
+    display: inline-block
+    width: 50px
+    font-size: 20px
+    color: #000
+    text-align: center
+
+#stringSearch
+  display: inline-block
+  width: 650px
+  height: 100%
+  font-size: 20px
+  border: none
+  outline: none
+  margin-left: 40px
+
+#search-btn
+  position: absolute
+  outline: none
+  top: 8px
+  left: 8px
+  height: 32px
+  width: 32px
+  border: none
+  cursor: pointer
+  zoom: 1
+  opacity: 0.65
+  background: transparent url(../img/search.png) top left no-repeat
+  &:hover
+    filter: alpha(opacity=90)
+    opacity: 0.9
+
+#wrapper
+  width: 1460px
+  height: 525px
+  margin: 20px auto
+  position: relative
+  overflow: hidden
+  padding: 0 15px
+
+#result
+  position: relative
+  transition: transform 2s
+.item
+  margin-top: 20px
+  -webkit-user-select: none
+  box-sizing: border-box
+  display: block
+  position: absolute
+  top: 0
+  width: 320px
+  height: 475px
+  background: #fff
+  border-radius: 10px
+  padding: 10px
+  overflow: hidden
+  &:hover
+    transition: all 0.3s
+    box-shadow: 0 0 15px 8px black
+  .title
+    display: block
+    font-size: 15px
+    font-weight: bold
+    position: absolute
+    top: 15px
+    left: 0
+    background-color: darken(#00bc9c, 15)
+    text-align: center
+    color: #fff
+    padding: 10px
+    width: 300px
+    text-decoration: none
+    &:hover
+      background: lighten(#00705d, 10)
+      color: seashell
+      transition: all 0.3s
+
+  img
+    width: 300px
+.information
+  width: 250px
+  margin: 10px auto
+  overflow-wrap: break-word
+  span
+    margin: 5px 0
+    display: inline-block
+    text-align: center
+    width: 200px
+    font-size: 16px
+    font-weight: bold
+    &:before
+      content: ''
+      font-family: FontAwesome
+      font-size: 24px
+      color: grey
+      margin: 0 20px
+      float: left
+  .channel
+    &:before
+      content: '\f007'
+  .date
+    &:before
+      content: '\f073'
+  .count
+    &:before
+      content: '\f06e'
+  p
+    margin-top: 20px
+.description
+  font-style: italic
+
+#pages
+  text-align: center
+  button
+    border: none
+    outline: none
+    background: transparent
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    margin-right: 5px
+    cursor: pointer
+    color: #fff
+    &.active
+      color: black
+      background: #00bc9c
+      transition: all 0.2s
+    &:hover
+      color: rgba(255, 255, 255, 1)
+      background: #506a85
+      transition: all 0.15s

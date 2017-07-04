@@ -1,0 +1,78 @@
+@import "bourbon"
+
+$HeadingColor: #506a85
+$ContentColor: #73879c
+$acentColor: #00bc9c
+$HeadingFont: Lato-Bold
+$ContentFont: SourceSansPro-Regular
+
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus
+  outline: none
+.container-fluid
+  padding-right: 0
+.center
+  text-align: center
+  h3
+    font-family: $HeadingFont
+    color: $HeadingColor
+    line-height: 54px
+    font-size: 44px
+    margin: 119px 0 25px 0
+    letter-spacing: 0.5px
+  p
+    font-family: $ContentFont
+    color: $ContentColor
+    line-height: 34px
+    font-size: 22px
+
+*
+  font-family: $ContentFont
+  color: $ContentColor
+  line-height: 22px
+  font-size: 14px
+  margin: 0
+  padding: 0
+  list-style-type: none
+  outline: none
+  text-decoration: none
+.no-padding
+  padding-left: 0
+  padding-right: 0
+.overlay
+  display: inline-block
+  position: relative
+  .fa-plus
+    color: white
+    top: 50%
+    position: absolute
+  .overlay-content
+    background-color: $acentColor
+    bottom: 0
+    left: 0
+    right: 0
+    top: 0
+    display: block
+    opacity: 0
+    position: absolute
+    z-index: 1
+    p
+      font-family: $HeadingFont
+      color: white
+      line-height: 16px
+      margin-top: 27%
+      margin-bottom: 5px
+    span
+      font-family: $ContentFont
+      color: white
+    &:hover
+      opacity: 0.9
+      text-align: center
+      transition: all 0.3s
+
+input[type="text"]
+  &:focus
+    outline: none
+    box-shadow: none
+    transition: all 0.3s
+
