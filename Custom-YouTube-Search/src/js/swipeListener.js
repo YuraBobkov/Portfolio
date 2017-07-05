@@ -29,7 +29,7 @@ function swipe(wrapper, pages, resultDiv, search, obj) {
     wrapper.addEventListener('mousedown', function(e) {
         mousedownX = e.clientX ;
         resultDivPostionX = parseInt(resultDiv.style.transform.slice(11, -1));
-        resultDiv.style.transition = 'left .1s';
+        resultDiv.style.transition = 'transform .1s';
         wrapper.addEventListener('mousemove', moveHandler);
         wrapper.addEventListener('mouseup', mouseUpHandler);
     });

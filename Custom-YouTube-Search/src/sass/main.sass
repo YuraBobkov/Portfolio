@@ -50,7 +50,6 @@ body
   &:hover
     filter: alpha(opacity=90)
     opacity: 0.9
-
 #wrapper
   width: 1460px
   height: 525px
@@ -58,12 +57,29 @@ body
   position: relative
   overflow: hidden
   padding: 0 15px
-
+  text-align: center
+  &:hover:after
+    opacity: 1
+    display: inline-block
+    width: 100%
+    content: "< swipe >"
+    text-transform: uppercase
+    font-size: 2.5vmin
+    color: white
+    animation-name: swipe
+    animation-duration: 2s
+    animation-iteration-count: infinite
+@keyframes swipe
+  0%
+    word-spacing: 0
+  100%
+    word-spacing: 10vw
 #result
   position: relative
   transition: transform 2s
+
 .item
-  margin-top: 20px
+  margin-top: 30px
   -webkit-user-select: none
   box-sizing: border-box
   display: block

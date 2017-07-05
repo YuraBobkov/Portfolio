@@ -1,8 +1,13 @@
+import {wrapper, pages} from './elements.js';
+
+
 export     function viewResult(item, number, resultDiv) {
     const url = `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyC2qipgU3Gn-sNtBlXnmn4QvXD4STOJL3U&id=${item.id.videoId}&part=snippet,statistics`;
     fetch(url)
         .then((resp) => resp.json())
         .then(function (data) {
+            document.body.appendChild(wrapper);
+            document.body.appendChild(pages);
             const figure = document.createElement('figure');
             const urlYoutube = `https://www.youtube.com/watch?v=${item.id.videoId}`;
             figure.innerHTML = `<a href=${urlYoutube} class="title">${data.items[0].snippet.title}</a>
