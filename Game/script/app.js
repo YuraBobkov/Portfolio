@@ -174,7 +174,7 @@ man.mousePress = function () {
     bullets.push(bullet);
     man.patron -= 1;
   }
-  if (key.isDown('RIGHT')) {
+  if (mouse.isPress('RIGHT')) {
     rel.play();
     setTimeout(function reload() {
       return man.patron = patronCount;
