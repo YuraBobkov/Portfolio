@@ -2,13 +2,19 @@ In this repo you can see some of my work with various technologies:
 
 # Calendar-React-Redux
 React +Redux + babel + eslint + webpack
+Sorry, but back-End was broken, that's why why calendar does not render events.
 
 Link to view: http://security-guard-distortion-61642.bitballoon.com/
 
 # Custom-YouTube-Search
 Native JS + webpack + gulp
+Implemented seamless load view, swipe with mouse and touch events.
 
-Link to view: http://money-changer-badger-33461.bitballoon.com/
+Link to view: http://geologist-park-63737.bitballoon.com
+
+# Form validation
+
+Link to view: http://planner-sharon-75145.bitballoon.com
 
 # Game
 PointJS

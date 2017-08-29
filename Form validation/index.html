@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Form validation</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <form class="registration" id="registration" action="mail.php" method="post">
+        <h1>Форма регистрации</h1>
+        <label for="username">
+            <span>Имя, Фамилия</span>
+            <input type="text" id="username" name="name" required>
+            <ul class="input-requirements">
+                <li>Содержут только русские буквы</li>
+                <li>Содерржит пробел</li>
+            </ul>
+        </label>
+        <label for="Email">
+            <span>E-mail</span>
+            <input type="email" id="Email" name="email" required>
+            <ul class="input-requirements">
+                <li>Укажите существующий E-mail</li>
+            </ul>
+        </label>
+        <label for="tel">
+            <span>номер телефона</span>
+            <input type="tel" id="tel" name="tel" value="+375 (__) ___-__-__" required>
+            <ul class="input-requirements">
+                <li>Введите корректынйsss номер</li>
+            </ul>
+        </label>
+        <br>
+        <input type="submit">
+
+    </form>
+</div>
+
+<script src="bundle.js"></script>
+</body>
+</html>
