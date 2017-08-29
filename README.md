@@ -2,7 +2,7 @@ In this repo you can see some of my work with various technologies:
 
 # Calendar-React-Redux
 React +Redux + babel + eslint + webpack
-Sorry, but back-End was broken, that's why why calendar does not render events.
+(Sorry, but back-End was broken, that's why why calendar does not render events.)
 
 Link to view: http://security-guard-distortion-61642.bitballoon.com/
 
