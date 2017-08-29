@@ -5,14 +5,14 @@ function swipe(wrapper, pages, resultDiv, search, obj) {
 
     const moveHandler = function(e) {
         var clientX = e.clientX || (e.touches.length ? e.touches[0].clientX : null);
-        resultDiv.style.transform = `translateX(${parseInt(resultDiv.style.transform.slice(11, -1), 10) + (e.clientX  - mousedownX)}px)`;
+        resultDiv.style.transform = `translateX(${parseInt(resultDiv.style.transform.slice(11, -3), 10) + (clientX  - mousedownX)}px)`;
         mousedownX = clientX;
     };
 
     const mouseUpHandler = function(e) {
         pages.childNodes[obj.currentPage - 1].classList.remove('active');
         resultDiv.style.transition = 'transform 0.5s';
-        const changePosition = resultDivPostionX - parseInt(resultDiv.style.transform.slice(11, -1), 10);
+        const changePosition = resultDivPostionX - parseInt(resultDiv.style.transform.slice(11, -3), 10);
         if(changePosition > obj.chageForSwipe) {
             obj.currentPage++;
         } else if(changePosition < -obj.chageForSwipe) {
@@ -29,7 +29,7 @@ function swipe(wrapper, pages, resultDiv, search, obj) {
     wrapper.addEventListener('mousedown', function(e) {
         mousedownX = e.clientX ;
         resultDivPostionX = parseInt(resultDiv.style.transform.slice(11, -1));
-        resultDiv.style.transition = 'transform .1s';
+        resultDiv.style.transition = 'transform 0.1s';
         wrapper.addEventListener('mousemove', moveHandler);
         wrapper.addEventListener('mouseup', mouseUpHandler);
     });
@@ -37,7 +37,7 @@ function swipe(wrapper, pages, resultDiv, search, obj) {
     wrapper.addEventListener('touchstart', function(e) {
         mousedownX = e.touches[0].clientX;
         resultDivPostionX = parseInt(resultDiv.style.transform.slice(11, -1));
-        resultDiv.style.transition = 'transform .1s';
+        resultDiv.style.transition = 'transform 0.1s';
         wrapper.addEventListener('touchmove', moveHandler);
         wrapper.addEventListener('touchend', mouseUpHandler);
     });
