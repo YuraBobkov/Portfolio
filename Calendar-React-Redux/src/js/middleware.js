@@ -4,7 +4,7 @@ export function middleware(store) {
     return function (action) {
       switch (action.type) {
         case 'LOAD_DATA': {
-          fetch("http://128.199.53.150/events")
+          fetch("https://damp-earth-84904.herokuapp.com/events")
             .then((res) => {
               return res.json();
             })
@@ -14,7 +14,7 @@ export function middleware(store) {
                 payload: data,
               });
             });
-          fetch("http://128.199.53.150/trainers")
+          fetch("https://damp-earth-84904.herokuapp.com/trainers")
             .then((res) => {
               return res.json();
             })

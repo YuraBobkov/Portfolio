@@ -88,6 +88,7 @@ img {
   padding: 5px;
   box-shadow:-1px -1px 6px -2px rgb(75, 140, 165),
     inset -1px -1px 43px -11px rgb(74, 174, 222);
+  cursor: pointer;
 }
 .day.today {
   margin: 0 auto;
