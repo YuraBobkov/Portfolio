@@ -8,7 +8,7 @@ var BookSchema = new Schema({
   readIn: { type: String },
   name: { type: String, required: true },
   author: { type: String },
-  ganre: { type: String },
+  genre: { type: String },
   description: { type: String },
   picture: { type: String },
 });

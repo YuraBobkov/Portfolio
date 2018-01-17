@@ -11,9 +11,9 @@ export function authError(error) {
 }
 
 export function getUser(token) {
-  return function (dispatch) {
+  return (dispatch) => {
     axios.post(`${URL}/get-user`, { token })
-      .then(response => {
+      .then((response) => {
         dispatch({ type: AUTH_USER, payload: response.data.user, likes: response.data.likes });
       })
       .catch((error) => {
@@ -24,13 +24,13 @@ export function getUser(token) {
 }
 
 export function logIn({ ...args }) {
-  return function (dispatch) {
+  return (dispatch) => {
     axios.post(`${URL}/login`, { ...args })
       .then((response) => {
         localStorage.setItem('token', response.data.token);
         dispatch({ type: AUTH_USER, payload: response.data.user, likes: response.data.likes });
       })
-      .catch((error) => {
+      .catch(() => {
         dispatch(authError('Wrong login or password'));
       });
   };
@@ -44,7 +44,7 @@ export function logOut() {
 }
 
 export function registration({ ...args }) {
-  return function (dispatch) {
+  return (dispatch) => {
     axios.post(`${URL}/register`, { ...args })
       .then((response) => {
         localStorage.setItem('token', response.data.token);
@@ -78,9 +78,9 @@ export function activeBook(name) {
 }
 
 export function updateBook({ ...args }) {
-  return function (dispatch) {
+  return () => {
     axios.post(`${URL}/books`, { ...args })
-      .then((response) => {
+      .then(() => {
         alert('Книгу успешно изменена');
       })
       .catch((error) => {
@@ -91,9 +91,9 @@ export function updateBook({ ...args }) {
 }
 
 export function likeBook(number, user) {
-  return function (dispatch) {
+  return (dispatch) => {
     axios.post(`${URL}/set-good-book`, { number, user })
-      .then(response => {
+      .then((response) => {
         dispatch({ type: AUTH_LIKES, payload: response.data });
       })
       .catch((error) => {
@@ -104,9 +104,9 @@ export function likeBook(number, user) {
 }
 
 export function unlikeBook(number, user) {
-  return function (dispatch) {
+  return (dispatch) => {
     axios.post(`${URL}/del-good-book`, { number, user })
-      .then(response => {
+      .then((response) => {
         dispatch({ type: AUTH_LIKES, payload: response.data });
       })
       .catch((error) => {

@@ -4,10 +4,10 @@
         "react",
         "jsx-a11y",
         "import"
-    ], 
-    "globals": {
-    "document": true,
-    "foo": true,
-    "window": true
-  }
+    ],
+    "rules": {
+      "react/prop-types": 0,
+      "max-len" : 0,
+      "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
+    }
 }

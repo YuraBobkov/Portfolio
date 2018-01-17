@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
   gutil = require('gulp-util'),
   sass = require('gulp-sass'),
-  browserSync = require('browser-sync'),
+  browserSync = require('browser-sync').create(),
   concat = require('gulp-concat'),
   uglify = require('gulp-uglify'),
   cleanCSS = require('gulp-clean-css'),
@@ -15,20 +15,20 @@ var gulp = require('gulp'),
   gulpRemoveHtml = require('gulp-remove-html'),
   bourbon = require('node-bourbon'),
   ftp = require('vinyl-ftp'),
-  notify = require('gulp-notify');
-webpack = require('webpack');
-WebpackDevServer = require('webpack-dev-server');
-webpackConfig = require('./webpack.config.js');
-webpackStream = require('webpack-stream');
+  notify = require('gulp-notify'),
+  webpack = require('webpack'),
+  webpackConfig = require('./webpack.config.js'),
+  webpackStream = require('webpack-stream');
+
 
 gulp.task('browser-sync', function () {
-  browserSync({
+  browserSync.init({
     server: {
-      baseDir: 'src'
+      baseDir: './src',
     },
-    notify: false
-  })
-})
+    notify: false,
+  });
+});
 
 gulp.task('sass', function () {
   return gulp.src('src/sass/**/*.sass')
@@ -40,8 +40,8 @@ gulp.task('sass', function () {
     .pipe(autoprefixer(['last 15 versions']))
     .pipe(cleanCSS())
     .pipe(gulp.dest('src/css'))
-    .pipe(browserSync.reload({stream: true}))
-})
+    .pipe(browserSync.stream());
+});
 
 gulp.task('libs', function () {
   return gulp.src([
@@ -50,55 +50,54 @@ gulp.task('libs', function () {
   ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('src/js'))
-})
+    .pipe(gulp.dest('src/js'));
+});
 
-gulp.task('script', () => {
+gulp.task('js', function () {
   gulp.src('src/js/index.js')
     .pipe(webpackStream(webpackConfig, webpack).on('error', notify.onError()))
     .pipe(gulp.dest('src/'))
-    .pipe(browserSync.reload({stream: true}))
-})
-
-gulp.task('watch', ['sass', 'libs', 'script', 'browser-sync'], function () {
-  gulp.watch('src/sass/**/*.sass', ['sass'])
-  gulp.watch('src/*.html', browserSync.reload)
-  gulp.watch('src/js/**/*.js', ['script'] )
-})
+    .pipe(browserSync.stream());
+});
+gulp.task('watch', ['sass', 'libs', 'js', 'browser-sync'], function () {
+  gulp.watch('src/sass/**/*.sass', ['sass']);
+  gulp.watch('src/*.html').on('change', browserSync.reload);
+  gulp.watch('src/js/**/*.js', ['js']);
+});
 
 gulp.task('imagemin', function () {
   return gulp.src('src/img/**/*')
     .pipe(cache(imagemin({
       interlaced: true,
       progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
+      svgoPlugins: [{ removeViewBox: false }],
+      use: [pngquant()],
     })))
-    .pipe(gulp.dest('dist/img'))
-})
+    .pipe(gulp.dest('dist/img'));
+});
 
 gulp.task('buildhtml', function () {
   gulp.src(['src/*.html'])
     .pipe(fileinclude({
-      prefix: '@@'
+      prefix: '@@',
     }))
     .pipe(gulpRemoveHtml())
-    .pipe(gulp.dest('dist/'))
-})
+    .pipe(gulp.dest('dist/'));
+});
 
-gulp.task('removedist', function () { return del.sync('dist') })
+gulp.task('removedist', function () { return del.sync('dist'); });
 
 gulp.task('build', ['removedist', 'buildhtml', 'imagemin', 'sass', 'libs'], function () {
   var buildCss = gulp.src([
     'src/css/fonts.min.css',
-    'src/css/main.min.css'
-  ]).pipe(gulp.dest('dist/css'))
+    'src/css/main.min.css',
+  ]).pipe(gulp.dest('dist/css'));
   var buildFiles = gulp.src([
-    'src/.htaccess'
-  ]).pipe(gulp.dest('dist'))
-  var buildFonts = gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts'))
-  var buildJs = gulp.src('src/js/**/*').pipe(gulp.dest('dist/js'))
-})
+    'src/.htaccess',
+  ]).pipe(gulp.dest('dist'));
+  var buildFonts = gulp.src('src/fonts/**/*').pipe(gulp.dest('dist/fonts'));
+  var buildJs = gulp.src('src/js/**/*').pipe(gulp.dest('dist/js'));
+});
 
 gulp.task('deploy', function () {
   var conn = ftp.create({
@@ -106,16 +105,16 @@ gulp.task('deploy', function () {
     user: 'username',
     password: 'userpassword',
     parallel: 10,
-    log: gutil.log
-  })
+    log: gutil.log,
+  });
   var globs = [
     'dist/**',
     'dist/.htaccess',
-  ]
-  return gulp.src(globs, {buffer: false})
-    .pipe(conn.dest('/path/to/folder/on/server'))
-})
+  ];
+  return gulp.src(globs, { buffer: false })
+    .pipe(conn.dest('/path/to/folder/on/server'));
+});
 
-gulp.task('clearcache', function () { return cache.clearAll() })
+gulp.task('clearcache', function () { return cache.clearAll()});
 
-gulp.task('default', ['watch'])
+gulp.task('default', ['watch']);

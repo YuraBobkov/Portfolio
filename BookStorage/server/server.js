@@ -26,11 +26,11 @@ app.get('/books', function (req, res) {
 });
 
 app.post('/books', function (req, res) {
-  db.updateBook(req.body).then(e=> res.send(e));
+  db.updateBook(req.body).then(e => res.send(e));
 });
 
 app.post('/get-user', function (req, res) {
-  db.encode(req.body).then(user => {
+  db.encode(req.body).then((user) => {
     res.send({
       user: {
         email: user.email,

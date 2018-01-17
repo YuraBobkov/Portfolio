@@ -4,7 +4,9 @@ const path = require('path');
 
 module.exports = {
   context: path.join(__dirname, 'src/'),
-  devtool: debug ? 'source-map' : false,
+  devtool: debug ? 'cheap-module-source-map' : false,
+  // watch: true,
+  cache: true,
   entry: './js/index.js',
   module: {
     loaders: [
@@ -20,17 +22,30 @@ module.exports = {
     ],
   },
   output: {
-    path: __dirname + '/src/',
-    // publicPath: '/src/',
+    path: path.join(__dirname, 'src/'),
     filename: 'bundle.js',
   },
   plugins: debug ? [] : [
-    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      mangle: false,
-      minimize: true,
-      sourceMap: false,
+      beautify: false,
+      comments: false,
+      compress: {
+        sequences: true,
+        booleans: true,
+        loops: true,
+        unused: true,
+        warnings: false,
+        drop_console: true,
+        unsafe: true,
+      },
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      children: true,
+      async: true,
+      name: 'vendor',
+    }),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.LoaderOptionsPlugin({
       debug: true,
     }),
