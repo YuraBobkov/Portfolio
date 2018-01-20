@@ -3,29 +3,31 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  context: path.join(__dirname, 'src/'),
+  context: path.resolve(__dirname, 'src'),
   devtool: debug ? 'cheap-module-source-map' : false,
-  // watch: true,
   cache: true,
-  entry: './js/index.js',
+  entry: [
+    './js/index.js',
+  ],
+  output: {
+    path: path.resolve(__dirname, 'src'),
+    publicPath: '/',
+    filename: 'bundle.js',
+  },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'stage-0'],
-          plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy', 'transform-object-rest-spread'],
-        },
+        loaders: 'babel-loader',
       },
     ],
   },
-  output: {
-    path: path.join(__dirname, 'src/'),
-    filename: 'bundle.js',
-  },
+
   plugins: debug ? [] : [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       beautify: false,

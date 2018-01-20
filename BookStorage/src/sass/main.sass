@@ -67,7 +67,7 @@ button[type='submit']
   justify-content: space-around
 input[type=radio]:checked ~ label
   color: rgba(255, 255, 255, .5)
-input[type=radio] ~ label
+input[type=radio]:not(:checked) ~ label
   cursor: pointer
   &:hover
     opacity: .5

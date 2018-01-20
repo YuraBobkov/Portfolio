@@ -18,14 +18,33 @@ var gulp = require('gulp'),
   notify = require('gulp-notify'),
   webpack = require('webpack'),
   webpackConfig = require('./webpack.config.js'),
-  webpackStream = require('webpack-stream');
-
+  webpackStream = require('webpack-stream'),
+  webpackDevMiddleware = require('webpack-dev-middleware'),
+  webpackHotMiddleware = require('webpack-hot-middleware'),
+  bundler = webpack(webpackConfig);
 
 gulp.task('browser-sync', function () {
   browserSync.init({
     server: {
       baseDir: './src',
     },
+    middleware: [
+      webpackDevMiddleware(bundler, {
+        publicPath: webpackConfig.output.publicPath,
+        noInfo: true,
+        // hot: true,
+        // inline: true,
+        // historyApiFallback: true,
+        stats: {
+          colors: true,
+        },
+      }),
+      webpackHotMiddleware(bundler),
+    ],
+    files: [
+      'src/css/*.css',
+      'src/*.html'
+    ],
     notify: false,
   });
 });
@@ -34,9 +53,9 @@ gulp.task('sass', function () {
   return gulp.src('src/sass/**/*.sass')
     .pipe(sass({
       includePaths: bourbon.includePaths,
-      outputStyle: 'expand'
+      outputStyle: 'expand',
     }).on('error', notify.onError()))
-    .pipe(rename({suffix: '.min', prefix: ''}))
+    .pipe(rename({ suffix: '.min', prefix: '' }))
     .pipe(autoprefixer(['last 15 versions']))
     .pipe(cleanCSS())
     .pipe(gulp.dest('src/css'))

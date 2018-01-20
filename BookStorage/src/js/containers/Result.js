@@ -4,7 +4,7 @@ import Modal from '../components/Modal';
 import Item from './Item';
 
 const Result = props => {
-  if (!props.data) {
+  if (!props.data.length) {
     return null;
   }
   return (

@@ -17,8 +17,8 @@ const filterBooks = (books, query, where) =>
 
 
 export default function request(store) {
-  return function (next) {
-    return function (action) {
+  return (next) => {
+    return (action) => {
       switch (action.type) {
         case GET_BOOKS: {
           makeRequest(`${URL}/books`)
@@ -32,7 +32,7 @@ export default function request(store) {
           break;
         }
         case GET_MY_BOOKS: {
-          axios.post(`${URL}/mybooks`, {email: action.payload} )
+          axios.post(`${URL}/mybooks`, { email: action.payload })
             .then((res) => {
               store.dispatch({
                 type: ADD_MY_BOOKS,
@@ -44,5 +44,5 @@ export default function request(store) {
       }
       return next(action);
     };
-  } ;
+  };
 }

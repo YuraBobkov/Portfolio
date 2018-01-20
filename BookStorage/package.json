@@ -5,7 +5,7 @@
   "main": "./src/js/index.js",
   "scripts": {
     "start": "gulp watch",
-    "build": "NODE_ENV='production' webpack -p gulp build",
+    "build": "webpack -p gulp build",
     "lint": "eslint ./src/js/index.js || true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -46,10 +46,10 @@
     "imagemin-pngquant": "*",
     "node-bourbon": "*",
     "prop-types": "*",
-    "react-hot-loader": "^3.1.3",
     "vinyl-ftp": "*",
     "webpack": "*",
     "webpack-dev-middleware": "^2.0.4",
+    "webpack-dev-server": "^2.11.0",
     "webpack-hot-middleware": "^2.21.0",
     "webpack-stream": "*"
   },
@@ -63,6 +63,7 @@
     "react-router": "*",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "*",
+    "redbox-react": "^1.5.0",
     "redux": "*",
     "redux-devtools-extension": "*",
     "redux-form": "^7.2.0",

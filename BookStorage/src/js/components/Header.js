@@ -27,30 +27,33 @@ export default class Header extends Component {
       return (
         <div id="user">
           <span className="navbar-brand">Hello, {this.props.user.name}!</span>
-          <button className="navbar-toggler"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"/>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle"
-                   href="#"
-                   id="navbarDropdown"
-                   role="button"
-                   data-toggle="dropdown"
-                   aria-haspopup="true"
-                   aria-expanded="false"
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
                 >
-                  <i className="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+                  <i className="fa fa-user-circle fa-2x" aria-hidden="true" />
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <Link to="/" className="dropdown-item">Home</Link>
                   <Link to="/bestbooks" className="dropdown-item">My best books</Link>
                 </div>
               </li>
@@ -66,9 +69,6 @@ export default class Header extends Component {
         <nav className="navbar navbar-expand-lg navbar-dark ">
           {this.renderUserContent()}
           <ul className="nav navbar-nav ml-auto">
-            <li className="nav-item " key={28345}>
-              <Link to="/" className="nav-link active">Home</Link>
-            </li>
             {this.renderLinks()}
           </ul>
         </nav>
